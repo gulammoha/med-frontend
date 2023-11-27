@@ -9,7 +9,7 @@ const Navbar = () => {
             <a href="/Register">Register</a>
             <a href="/Login">Login</a>
             <a href="/dashboard">Dashboard</a>
-            <a href="/addStudents">Add Student</a>
+            <a href="/addStudent">Add Student</a>
             </div>
         </nav>
     );
