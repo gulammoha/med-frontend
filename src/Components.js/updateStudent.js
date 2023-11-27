@@ -1,21 +1,24 @@
 import axios from "axios";
 import { useState } from "react";
+import {useParams} from "react-router-dom"
 
-function AddStudent(){
-    const [user,setUser] = useState({
+function UpdateStudent(){
+    const [student, setStudent] = useState({
         firstname:"",
         lastname:"",
         gender:""
     })
+
+    const {id} = useParams()
     const handlechange =(e)=>{
         const{name,value}=e.target;
-        setUser((prev)=>{
+        setStudent((prev)=>{
             return {...prev,[name]:value}
         })
     }
-    const handlesubmit = (e)=>{
+    const handlesubmit = async (e)=>{
         e.preventDefault();
-        axios.post("http://localhost:4000/students",user)
+        axios.patch("http://localhost:4000/students/" +id, student)
         .then(res=>{
             console.log(res);
         })
@@ -39,4 +42,4 @@ function AddStudent(){
         </form>
     )
 }
-export default AddStudent;
+export default UpdateStudent;

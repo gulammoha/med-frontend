@@ -5,29 +5,34 @@ import Login from './Components.js/Login';
 import Navbar from './Components.js/navbar';
 import Vendors from './Components.js/vendors';
 import Dashboard from ''
+import AddStudent from './Components.js/addStudent';
+import UpdateStudent from './Components.js/updateStudent';
+import Home from './Components.js/Home';
 function App(){
   return(
     <Router>
         <div className="App">
+          <Navbar/>
         <Switch>
+          <Route exact path ="/">
+            <Home/>
+          </Route>
         <Route path ="/Login">
             <Login/>
           </Route>
           <Route path ="/Register">
             <Register/>
           </Route>
-     
           <Route path ="/Dashboard">
             <Dashboard/>
           </Route>
           <Route path ="/addStudent">
-            <addStudent/>
+            <AddStudent/>
           </Route>
-          <Route path ="Navbar">
-            <Navbar/>
+          <Route path ="/update/:id">
+            <UpdateStudent/>
           </Route>
         </Switch>  
-   
       </div>
     </Router>
  )}
