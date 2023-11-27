@@ -5,7 +5,6 @@ import axios from "axios"
 //components
 import { StudentDetails } from "./StudentDetails";
 
-
 const Home = ()=>{
     const {students, setStudents} = useState([])
     const url = "http://localhost:4000/students"

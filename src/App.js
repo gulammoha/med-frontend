@@ -3,7 +3,6 @@ import Register from './Components.js/Register';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom/cjs/react-router-dom';
 import Login from './Components.js/Login';
 import Navbar from './Components.js/navbar';
-import Vendors from './Components.js/vendors';
 import Dashboard from ''
 import AddStudent from './Components.js/addStudent';
 import UpdateStudent from './Components.js/updateStudent';

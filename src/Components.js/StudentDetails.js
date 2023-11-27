@@ -17,9 +17,9 @@ export const StudentDetails = ({student}) => {
     }
   return (
      <div className="student-details">
-                <h3>{student.title}</h3>
-                <p><strong>Loads (kg): </strong>{student.load}</p>
-                <p><strong>Reps: </strong>{student.reps}</p>
+                <h3>{student.gender}</h3>
+                <p><strong>First Name: </strong>{student.firstname}</p>
+                <p><strong>Last Name: </strong>{student.lastname}</p>
                 <p>{student.createdAt}</p>
                 <button onClick={updateStudent}>update</button>
                 <button onClick={deleteStudent}>delete</button>
