@@ -1,6 +1,17 @@
+import Content from "./Content";
+import Rightbar from "./Rightbar";
+import Sidebar from "./Sidebar";
+
 const Dashboard=()=>{
 return(
-    <h2>DASHBOARD</h2>
+    <>
+        <div className="layout-container">
+            <Sidebar/>
+            <Content/>
+            <Rightbar/>
+        </div>
+    </>
+    
 )
 }
 export default Dashboard;
