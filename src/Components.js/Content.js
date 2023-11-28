@@ -12,7 +12,7 @@ export default function Content() {
             <Widget type="balance"/>
         </div>
         <div className="charts">
-            <Featured/>
+            <Featured/> 
             <Chart/>
         </div>
     </div>

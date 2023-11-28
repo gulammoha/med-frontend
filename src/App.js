@@ -1,12 +1,12 @@
 import './App.css';
-import Register from './pages.js/Register';
+import Register from './pages/Register';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Login from './pages.js/Login';
+import Login from './pages/Login';
 import Navbar from './Components.js/navbar';
-import AddStudent from './pages.js/addStudent';
-import UpdateStudent from './pages.js/updateStudent';
+import AddStudent from './pages/addStudent';
+import UpdateStudent from './pages/updateStudent';
 import Home from './Components.js/Home';
-import Dashboard from './pages.js/dashboard';
+import Dashboard from './pages/dashboard';
 import { Routes } from 'react-router-dom';
 function App(){
   return(
