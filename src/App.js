@@ -8,17 +8,17 @@ import UpdateStudent from './pages/updateStudent';
 import Home from './Components.js/Home';
 import Dashboard from './pages/dashboard';
 import { Routes } from 'react-router-dom';
+import Sidebar from './Components.js/Sidebar';
 function App(){
   return(
     <Router>
         <div className="App">
           <Navbar/>
-          <Dashboard/>
         <Routes>
-          <Route exact path ="/"element={<Home/>}/>
+          <Route exact path ="/"element={<Dashboard/>}/>
           <Route path ="/Login"  element={<Login/>}/>
           <Route path ="/Register" element={<Register/>}/>
-          <Route path ="/Dashboard" element={<Dashboard/>}/>
+          <Route path ="/students" element={<Home/>}/>
           <Route path ="/addStudent" element={<AddStudent/>}/>
           <Route path ="/update/:id" element={<UpdateStudent/>}/>
         </Routes>  

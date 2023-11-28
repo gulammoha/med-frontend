@@ -441,5 +441,12 @@ background-color: rgba(189, 189, 3, 0.103);
 }
 
 
-/*  */
+/*student list  styling */
+.list {
+    display: flex;
+    width: 100%;
+}
+ .list > .listContainer {
+     flex: 6;
+ }
 

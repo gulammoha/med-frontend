@@ -11,10 +11,13 @@ const Navbar = () => {
     return (
         <nav className="navbar">
             <div className="wrapper">
-                <h2><a href="/students">STUDENTS</a></h2>
-                 <div className="search">
-                    <input type="text" placeholder="Search..." />
-                    <SearchOutlinedIcon />
+                <h2><a href="/students">TRADING</a></h2>
+                <div className="links">
+                    <a href="/students">students</a>
+                    <a href="/Register">Register</a>
+                    <a href="/Login">Login</a>
+                    <a href="/">Dashboard</a>
+                    <a href="/addStudent">Add Student</a>
                 </div>
                 <div className="items">
                     <div className="item">

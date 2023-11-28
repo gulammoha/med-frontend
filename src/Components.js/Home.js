@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import axios from "axios"
-import Sidebar from "../Components.js/Sidebar"
-import Navbar from "../Components.js/navbar"
+
 
 
 //components
@@ -27,11 +26,9 @@ const Home = ()=>{
 
     return (
         <div className="list">
-            <Sidebar/>
           <div className="listContainer">
-            <Navbar/>
              {students && students.map(student=>(
-                <StudentDetails key={student._id} student={student}/>
+                <StudentDetails />
               ))}
           </div>
         </div>

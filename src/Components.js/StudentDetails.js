@@ -1,9 +1,8 @@
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "./datatablesource";
 import { Link } from "react-router-dom";
-
+import { studentColumns } from "../Components.js/dataGridSource";
 
 export const StudentDetails = ({student}) => {
     const navigate = useNavigate();
@@ -47,14 +46,14 @@ export const StudentDetails = ({student}) => {
       <div className="datatable">
       <div className="datatableTitle">
         View User
-        <Link to="/users/test" style={{ textDecoration: "none" }}>
+        <Link to="/student/:id" style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
         </Link>
       </div>
       <DataGrid
         className="datagrid"
         rows={student}
-        columns={userColumns.concat(actionColumn)}
+        columns={studentColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
