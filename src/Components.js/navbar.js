@@ -1,66 +1,51 @@
-import React from "react";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+
 
 const Navbar = () => {
     return (
         <nav className="navbar">
-            <h2><a href="/students">STUDENTS</a></h2>
-            <div className="links">
-            <a href="/Home">home</a>
-            <a href="/Register">Register</a>
-            <a href="/Login">Login</a>
-            <a href="/dashboard">Dashboard</a>
-            <a href="/addStudent">Add Student</a>
+            <div className="wrapper">
+                <h2><a href="/students">STUDENTS</a></h2>
+                 <div className="search">
+                    <input type="text" placeholder="Search..." />
+                    <SearchOutlinedIcon />
+                </div>
+                <div className="items">
+                    <div className="item">
+                        <LanguageOutlinedIcon className="icon" />
+                        English
+                    </div>
+                    <div className="item">
+                        <DarkModeOutlinedIcon className="icon"/>
+                    </div>
+                    <div className="item">
+                        <FullscreenExitOutlinedIcon className="icon" />
+                    </div>
+                    <div className="item">
+                        <NotificationsNoneOutlinedIcon className="icon" />
+                        <div className="counter">1</div>
+                    </div>
+                    <div className="item">
+                        <ChatBubbleOutlineOutlinedIcon className="icon" />
+                        <div className="counter">2</div>
+                    </div>
+                    <div className="item">
+                        <ListOutlinedIcon className="icon" />
+                    </div>
+                    <div className="item">
+                        <img
+                        src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+                        alt="" className="avatar"/>
+                    </div>
+                </div>
             </div>
         </nav>
     );
 }
 export default Navbar;
-
-// import React, { useState } from "react";
-// import { Link } from "react-router-dom";
-
-// const Navbar = () => {
-//   const [showDropdown, setShowDropdown] = useState(false);
-
-//   const toggleDropdown = () => {
-//     setShowDropdown(!showDropdown);
-//   };
-
-//   return (
-//     <div className="bg-gray-">
-//       <h2 className="font-bold font-sans  text-2xl pl-4 lg:pl-11  text-violet-600">
-//         School Us
-//       </h2>
-//       <nav className="flex space-x-4 pl-4 lg:pl-96    leading-12">
-//         <Link to="/login" className="text-purple-600 pl-96">
-//           Users
-//         </Link>
-//         <div className="relative inline-block">
-//           <button
-//             onClick={toggleDropdown}
-//             className="text-purple-600 focus:outline-none"
-//           >
-//             Student
-//           </button>
-//           {showDropdown && (
-//             <div className="absolute right-0 mt-2 bg-white border border-gray-300 p-2 text-purple-600">
-//               <Link to="/signup" className="block mb-2">
-//                 register
-//               </Link>
-//               <Link to="/student-data" className="block">
-//                 Student Data
-//               </Link>
-//             </div>
-//           )}
-//         </div>
-//         <Link to="/loginuser" className="text-purple-600">
-//           Login
-//         </Link>
-//         <Link to="/dashboard" className="text-purple-600">
-//           Dashboard
-//         </Link>
-//       </nav>
-//     </div>
-//   );
-// };
-
