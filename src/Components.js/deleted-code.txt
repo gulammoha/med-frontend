@@ -7,3 +7,12 @@
                 <a href="/addStudent">Add Student</a>
 </div>
 
+// student list
+ <div className="student-details">
+                <h3>{student.gender}</h3>
+                <p><strong>First Name: </strong>{student.firstname}</p>
+                <p><strong>Last Name: </strong>{student.lastname}</p>
+                <p>{student.createdAt}</p>
+                <button onClick={updateStudent}>update</button>
+                <button onClick={deleteStudent}>delete</button>
+    </div>

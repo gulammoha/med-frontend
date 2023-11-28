@@ -318,11 +318,11 @@ margin-top: 10px;
 font-size: 14px;
 }
 
-.featured>.bottom>.summary>.item  .itemResult , .positive {
+.featured>.bottom>.summary>.item  .itemResult  .positive {
 color: green;
 }
 
-.featured>.bottom>.summary>.item .itemResult , .negative {
+.featured>.bottom>.summary>.item .itemResult  .negative {
 color: red;
 }
  
@@ -410,7 +410,7 @@ cursor: pointer;
 
 /* table styling */
 .table {
-    /* fuck */
+    height: auto;
 }
 .table >.cellWrapper {
     display: flex;

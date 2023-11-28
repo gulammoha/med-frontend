@@ -1,6 +1,7 @@
 import Featured from "../widgets/featured";
 import Chart from "../widgets/stats";
 import Widget from "../widgets/widgets";
+import List from "./table";
 
 export default function Content() {
   return (
@@ -14,6 +15,10 @@ export default function Content() {
         <div className="charts">
             <Featured/> 
             <Chart/>
+        </div>
+        <div className="listContainer">
+            <div className="listTitle">Latest Transactions</div>
+            <List/>
         </div>
     </div>
   )

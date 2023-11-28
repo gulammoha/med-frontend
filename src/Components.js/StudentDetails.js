@@ -1,5 +1,9 @@
 import axios from "axios"
 import {useNavigate} from "react-router-dom"
+import { DataGrid } from "@mui/x-data-grid";
+import { userColumns, userRows } from "./datatablesource";
+import { Link } from "react-router-dom";
+
 
 export const StudentDetails = ({student}) => {
     const navigate = useNavigate();
@@ -15,14 +19,47 @@ export const StudentDetails = ({student}) => {
         })
          .catch(err=>console.log(err))
     }
+    const actionColumn = [
+    {
+      field: "action",
+      headerName: "Action",
+      width: 200,
+      renderCell: (params) => {
+        return (
+          <div className="cellAction">
+              <div className="viewButton"
+                onClick={() => updateStudent(params.row.id)}>
+                  Update
+              </div>
+            <div
+              className="deleteButton"
+              onClick={() => deleteStudent(params.row.id)}
+            >
+              Delete
+            </div>
+          </div>
+        );
+      },
+    },
+  ];
   return (
-     <div className="student-details">
-                <h3>{student.gender}</h3>
-                <p><strong>First Name: </strong>{student.firstname}</p>
-                <p><strong>Last Name: </strong>{student.lastname}</p>
-                <p>{student.createdAt}</p>
-                <button onClick={updateStudent}>update</button>
-                <button onClick={deleteStudent}>delete</button>
+    <>
+      <div className="datatable">
+      <div className="datatableTitle">
+        View User
+        <Link to="/users/test" style={{ textDecoration: "none" }}>
+              <div className="viewButton">View</div>
+        </Link>
+      </div>
+      <DataGrid
+        className="datagrid"
+        rows={student}
+        columns={userColumns.concat(actionColumn)}
+        pageSize={9}
+        rowsPerPageOptions={[9]}
+        checkboxSelection
+      />
     </div>
+    </>
   )
 }
