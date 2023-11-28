@@ -12,11 +12,11 @@ const Widget = ({ type }) => {
   const diff = 20;
 
   switch (type) {
-    case "user":
+    case "students":
       data = {
-        title: "USERS",
+        title: "STUDENTS",
         isMoney: false,
-        link: "See all users",
+        link: "See all students",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -28,11 +28,11 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "order":
+    case "orders":
       data = {
         title: "ORDERS",
         isMoney: false,
-        link: "View all orders",
+        link: "View all shop orders",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -44,11 +44,11 @@ const Widget = ({ type }) => {
         ),
       };
       break;
-    case "earning":
+    case "subscriptions":
       data = {
-        title: "EARNINGS",
+        title: "SUBSCRIPTIONS",
         isMoney: true,
-        link: "View net earnings",
+        link: "View net sub count",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -61,7 +61,7 @@ const Widget = ({ type }) => {
       data = {
         title: "BALANCE",
         isMoney: true,
-        link: "See details",
+        link: "See upaid fees",
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"

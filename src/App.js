@@ -13,6 +13,7 @@ function App(){
     <Router>
         <div className="App">
           <Navbar/>
+          <Dashboard/>
         <Routes>
           <Route exact path ="/"element={<Home/>}/>
           <Route path ="/Login"  element={<Login/>}/>
