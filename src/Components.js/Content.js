@@ -1,3 +1,4 @@
+import Featured from "../widgets/featured";
 import Chart from "../widgets/stats";
 import Widget from "../widgets/widgets";
 
@@ -11,6 +12,7 @@ export default function Content() {
             <Widget type="balance"/>
         </div>
         <div className="charts">
+            <Featured/>
             <Chart/>
         </div>
     </div>
