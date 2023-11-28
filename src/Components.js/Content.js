@@ -1,3 +1,4 @@
+import Chart from "../widgets/stats";
 import Widget from "../widgets/widgets";
 
 export default function Content() {
@@ -8,6 +9,9 @@ export default function Content() {
             <Widget type="orders"/>
             <Widget type="subscriptions"/>
             <Widget type="balance"/>
+        </div>
+        <div className="charts">
+            <Chart/>
         </div>
     </div>
   )

@@ -1,101 +1,52 @@
-import "./widget.scss";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
 
-const Widget = ({ type }) => {
-  let data;
+const data = [
+  { name: "January", Total: 1200 },
+  { name: "February", Total: 2100 },
+  { name: "March", Total: 800 },
+  { name: "April", Total: 1600 },
+  { name: "May", Total: 900 },
+  { name: "June", Total: 1700 },
+];
 
-  //temporary
-  const amount = 100;
-  const diff = 20;
-
-  switch (type) {
-    case "user":
-      data = {
-        title: "USERS",
-        isMoney: false,
-        link: "See all users",
-        icon: (
-          <PersonOutlinedIcon
-            className="icon"
-            style={{
-              color: "crimson",
-              backgroundColor: "rgba(255, 0, 0, 0.2)",
-            }}
-          />
-        ),
-      };
-      break;
-    case "order":
-      data = {
-        title: "ORDERS",
-        isMoney: false,
-        link: "View all orders",
-        icon: (
-          <ShoppingCartOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(218, 165, 32, 0.2)",
-              color: "goldenrod",
-            }}
-          />
-        ),
-      };
-      break;
-    case "earning":
-      data = {
-        title: "EARNINGS",
-        isMoney: true,
-        link: "View net earnings",
-        icon: (
-          <MonetizationOnOutlinedIcon
-            className="icon"
-            style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
-          />
-        ),
-      };
-      break;
-    case "balance":
-      data = {
-        title: "BALANCE",
-        isMoney: true,
-        link: "See details",
-        icon: (
-          <AccountBalanceWalletOutlinedIcon
-            className="icon"
-            style={{
-              backgroundColor: "rgba(128, 0, 128, 0.2)",
-              color: "purple",
-            }}
-          />
-        ),
-      };
-      break;
-    default:
-      break;
-  }
-
+const Chart = ({ aspect, title }) => {
   return (
-    <div className="widget">
-      <div className="left">
-        <span className="title">{data.title}</span>
-        <span className="counter">
-          {data.isMoney && "$"} {amount}
-        </span>
-        <span className="link">{data.link}</span>
-      </div>
-      <div className="right">
-        <div className="percentage positive">
-          <KeyboardArrowUpIcon />
-          {diff} %
-        </div>
-        {data.icon}
-      </div>
+    <div className="chart">
+      <div className="title">{title}</div>
+      <ResponsiveContainer width="100%" aspect={aspect}>
+        <AreaChart
+          width={730}
+          height={250}
+          data={data}
+          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
+        >
+          <defs>
+            <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
+              <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
+            </linearGradient>
+          </defs>
+          <XAxis dataKey="name" stroke="gray" />
+          <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
+          <Tooltip />
+          <Area
+            type="monotone"
+            dataKey="Total"
+            stroke="#8884d8"
+            fillOpacity={1}
+            fill="url(#total)"
+          />
+        </AreaChart>
+      </ResponsiveContainer>
     </div>
   );
 };
 
-export default Widget;
+export default Chart;
