@@ -25,13 +25,11 @@ const Home = ()=>{
     }, [])
 
     return (
-        <div className="list">
-          <div className="listContainer">
+          <div className="preview">
              {students && students.map(student=>(
-                <StudentDetails />
+                <StudentDetails  key={student._id} student={student}/>
               ))}
           </div>
-        </div>
     )
 }
 

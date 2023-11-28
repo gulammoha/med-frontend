@@ -18,7 +18,37 @@ body {
   margin: 0;
   font-family: "Poppins";
 }
+/* .content{
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+} */
+.preview {
+  max-width: 600px;
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #f2f2f2;
+}
 
+.preview:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.preview h2 {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: blueviolet;
+}
+
+.preview a {
+  text-decoration: none !important;
+}
+
+.home {
+  position: absolute;
+  margin-top: 100px;
+
+}
 header {
   background: #fff;
 }
